@@ -15,14 +15,15 @@
     <body>
           <div class="UI">
             <label for="faces">Number of faces:</label>
-            <input id="faces" type="range" min="3" max="100" value="6" onmouseup="mkRoll()" ontouchend="mkRoll()">
-            </input>
+            <input id="facesSlider" type="range" min="3" max="100" value="6" onmouseup="chgVal('faces')" ontouchend="mkRoll()">
+            <input id="faces" type="number"  min="3" max="100" value="6" onchange="chgVal('facesSlider')">
           </div>
-          
+
           <div class="UI">
             <label for="quantity">Quantity:</label>
-            <input id="quantity" type="range" min="1" max="20" value="1" onmouseup="mkRoll()" ontouchend="mkRoll()">
-            </input>
+            <input id="quantitySlider" type="range" min="1" max="20" value="1" onmouseup="chgVal('quantity')" ontouchend="mkRoll()">
+            <input id="quantity" type="number" min="1" max="20" value="1" onchange="chgVal('quantitySlider')">
+
           </div>
 
           <button id="roll" onclick="mkRoll()" >Roll</button>

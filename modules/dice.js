@@ -1,6 +1,7 @@
 
 function Dice (nMax = 6) {
   var self = this;
+  nMax = parseInt(nMax, 10);
   self.number = Math.trunc( Math.random() * nMax ) + 1;  // Face visible du dé
 
   switch (self.number) {
@@ -17,17 +18,16 @@ function Dice (nMax = 6) {
   self.draw = (ctx, x, y) => {
     switch (self.state) {
       case "Fail":
-        ctx.fillStyle = "AAA111";
+        ctx.fillStyle = "#EEE111";
         break;
       case "Success":
-        ctx.fillStyle = "#111AAA";
+        ctx.fillStyle = "#111EEE";
         break;
       default:
         ctx.fillStyle = "#AAAAAA";
 
     }
 
-    ctx.fillRect(x, y, 10, 10);
-    ctx.fillText(self.number, x+5, y+5);
+    ctx.fillText(self.number, x, y);
   };
 }

@@ -40,3 +40,12 @@ function mkRoll(){
   historic.push(new RollSet());
 
 }
+
+function chgVal(type) {
+  if ( type.endsWith('Slider') ) {
+    document.getElementById(type).value = document.getElementById(type.substring(0, type.length - 6)).value;
+  } else {
+    document.getElementById(type).value = document.getElementById(type + 'Slider').value;
+    mkRoll();
+  }
+}

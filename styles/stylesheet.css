@@ -40,4 +40,5 @@ input[type=range]  {
 canvas {
   background-color: #232323;
   display: block;
+  width:  500px;
 }
