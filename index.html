@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Dice Simulator 2020</title>
+
+        <meta charset="UTF-8">
+        <meta name="description" content="Générateur de lancés de dés">
+        <meta name="keywords" content="dé">
+
+        <link rel="stylesheet" href="./styles/stylesheet.css">
+
+        <script src='./modules/dice.js' ></script>
+        <script src='./modules/main.js'></script>
+    </head>
+    <body>
+          <div class="UI">
+            <label for="faces">Number of faces:</label>
+            <input id="faces" type="range" min="3" max="100" value="6" onmouseup="mkRoll()" ontouchend="mkRoll()">
+            </input>
+          </div>
+          
+          <div class="UI">
+            <label for="quantity">Quantity:</label>
+            <input id="quantity" type="range" min="1" max="20" value="1" onmouseup="mkRoll()" ontouchend="mkRoll()">
+            </input>
+          </div>
+
+          <button id="roll" onclick="mkRoll()" >Roll</button>
+        </div>
+        <canvas id="canvas"></canvas>
+    </body>
+</html>
