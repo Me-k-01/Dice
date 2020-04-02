@@ -37,7 +37,6 @@ function RollSet() {
       d.draw(ctx, x, y);  // On dessine chacun des dés sur le canvas
       x += d.w;
     }
-    
   };
   var d;
   for ( let i=0; i<self.quantity; i++ ) {
@@ -55,8 +54,8 @@ function RollSet() {
     }
   }
 
-  /* Calcul */
-
+  // Calcul
+  
   self.avg = self.total / self.quantity;  // Moyenne des lancés
   self.draw();
 

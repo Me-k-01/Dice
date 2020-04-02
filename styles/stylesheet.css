@@ -60,3 +60,6 @@ button:active {
   border-top-left-radius: 13px;
   background-color: #26c5d0;
 }
+footer {
+  width: 100vh;
+}
