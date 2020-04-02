@@ -1,44 +1,62 @@
 html {
-  background-color: #121212;
+  background-color: #1d1d20;
 }
 
+label {
+  color: #AAA;
+  display: block;
+  font-size: 110%;
+}
+
+input[type=range]  {
+  cursor: pointer;
+  display: block;
+  width: 100%;
+
+}
+input[type=number]  {
+  width: 100%;
+  text-align: center;
+  background-color: #CCC;
+}
+
+header {
+  background-color: #151518;
+  height: 20%;
+  display: flex;
+}
+header .input {
+  margin: 25px;
+}
+canvas {
+  background-color: #1d1d20;
+  float: left;
+  width: 70%;
+}
+#reference img {
+}
 
 button {
   cursor: pointer;
-  border-bottom-right-radius: 13px;
-  border-bottom-left-radius: 13px;
-  background-color: #26c5d0;
   color: #25252a;
+  background-color: white;
   border: none;
   outline: none;
   font-family: arial;
   font-size: 2em;
   padding: 10px;
   transition: 0.1s;
-
 }
 button:hover {
-  transform: scale(1.01);
+  transform: scale(1.03);
 }
 button:active {
   transform: scale(0.98);
 }
 
-label {
-  color: #AAA;
-  display: block;
-}
-
-div.UI {
-  display: inline-block;
-}
-
-input[type=range]  {
-  cursor: pointer;
-}
-
-canvas {
-  background-color: #232323;
-  display: block;
-  width:  500px;
+.ui button {
+  width: 28%;
+  border-bottom-left-radius: 13px;
+  border-top-left-radius: 13px;
+  background-color: #26c5d0;
 }
