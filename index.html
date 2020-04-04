@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="./styles/stylesheet.css">
 
         <script src='./scripts/dice.js' ></script>
+        <script src='./scripts/calcul.js'></script>
         <script src='./scripts/main.js'></script>
 
     </head>
@@ -43,19 +44,51 @@
         <label for="influence">Critical roll influence throw number</label>
       </header>
 
-      <!-- Zone de dessin des dés -->
-      <canvas id="canvas"></canvas>
       <!-- Interface utilisateur pour les bouttons -->
       <div class="ui">
         <button id="roll" onclick="mkRoll()" >Roll</button>
-
+        <button id="roll" onclick="mkRoll()" >Roll</button>
+        <button id="roll" onclick="mkRoll()" >Roll</button>
       </div>
 
-      <section>
-        <input id="dicetocalc" type="number" min="3" max="100" name="dicetocalc" value="">
-        <input id="perso" type="number" min="3" max="100" name="perso" value="1">
-        <button type="button" name="button">Calcul</button>
+      <!-- Zone de dessin des dés -->
+      <canvas id="canvas"></canvas>
 
+      <section>
+        <div class="line" onkeyup="update();" onclick="update()">
+          <input id="inputforcalc" style="display: none;" type="number" min="3" max="100" name="inputforcalc" placeholder="Jet de dés" value="">
+          <select id="character" placeholder="personnage" name="perso">
+            <option value="">--Personnage--</option>
+            <option value="simon">Simon</option>
+            <option value="pouppy">Pouppy</option>
+            <option value="whistleston">Whistleston</option>
+            <option value="classd">Class-D</option>
+            <option value="mtf">MTF</option>
+          </select>
+          <select id="action" name="action">
+            <option value="">--Actions--</option>
+            <option value="aim">Viser</option>
+            <option value="damageDist">Tirer</option>
+            <option value="damageCac">Frapper</option>
+          </select>
+          <select id="weapondist" style="display: none;" name="weapondist">
+            <option value="">--Arme a distance--</option>
+            <option value="pistol">Pistolet</option>
+            <option value="shotgun">Fusil à pompe</option>
+          </select>
+          <select id="weaponcac" style="display: none;" name="weaponcac">
+            <option value="">--Arme au CaC--</option>
+            <option value="fist">Point</option>
+            <option value="knife">Couteau</option>
+            <option value="butt">Crosse</option>
+            <option value="electrode">Electrode</option>
+          </select>
+          <input id="distance" style="display: none;" type="number" min="1" max="100" value="1" name="distance" placeholder="Distance (en m)" value="">
+
+          <div id="output">
+            Réponse
+          </div>
+        </div>
       </section>
 
       <footer>

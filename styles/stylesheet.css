@@ -18,6 +18,7 @@ input[type=number]  {
   width: 100%;
   text-align: center;
   background-color: #CCC;
+  border: none;
 }
 
 header {
@@ -30,9 +31,18 @@ header .input {
 }
 canvas {
   background-color: #1d1d20;
-  float: left;
   width: 70%;
 }
+
+.ui {
+  position: absolute;
+  display: flex;
+  height: 80%;
+  flex-direction: column;
+  width: 30%;
+  margin-left: 70%;
+}
+
 #reference img {
 }
 
@@ -55,11 +65,29 @@ button:active {
 }
 
 .ui button {
-  width: 28%;
+  width: 100%;
+  margin: 5px;
   border-bottom-left-radius: 13px;
   border-top-left-radius: 13px;
   background-color: #26c5d0;
 }
+.line {
+  display: flex;
+  width: 550px;
+  border-radius: 10px;
+  padding: 5px;
+  background-color: #f3e9ff;
+  justify-content: space-between;
+}
+section {
+  width: 100vh;
+}
 footer {
   width: 100vh;
+}
+#output {
+  color: #CCC;
+  background-color: #25252a;
+  width: 80px;
+  padding: 5px;
 }

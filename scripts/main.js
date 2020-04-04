@@ -1,11 +1,13 @@
 
+var historic = [];  // Variable global de l'historique des lancé
+
 
 function RollSet() {
   /* Lancement d'une certaines quantité de dés*/
   var self = this;
   const cv  = document.getElementById('canvas');
-  cv.width = (window.innerWidth * 70) / 100;
-  cv.height = window.innerHeight - (window.innerHeight * 40) / 100;
+  cv.width  = window.innerWidth  * 70 / 100;
+  cv.height = window.innerHeight * 60 / 100;
   /* Stylisation du context 2D du canvas */
   const ctx = cv.getContext('2d');
   ctx.fillStyle = '#1d1d20';
@@ -37,10 +39,10 @@ function RollSet() {
       d.draw(ctx, x, y);  // On dessine chacun des dés sur le canvas
       x += d.w;
     }
+
   };
-  var d;
   for ( let i=0; i<self.quantity; i++ ) {
-    d = new Dice(self.nSides);
+    var d = new Dice(self.nSides);
     self.total += d.number;
     self.list.push(d);
 
@@ -54,14 +56,24 @@ function RollSet() {
     }
   }
 
-  // Calcul
-  
+  /* Calcul */
+  // Changement du dernier dé pour le Calcul
+  var calc = document.getElementById("inputforcalc");
+  if (calc != null) {
+    calc.value = self.total;
+  }
+
+  update();
+
+
+
+
+
   self.avg = self.total / self.quantity;  // Moyenne des lancés
   self.draw();
 
 }
 
-var historic = [];  // Variable global de l'historique des lancé
 
 function mkRoll(){
   historic.push(new RollSet());
