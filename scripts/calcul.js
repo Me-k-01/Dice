@@ -11,6 +11,14 @@ var characters = {
   whistleston: {
     adress: 50,
     strength: 30
+  },
+  classd: {
+    adress: 70,
+    strength: 40
+  },
+  mtf: {
+    adress: 40,
+    strength: 90
   }
 };
 
@@ -28,16 +36,24 @@ var weapons = {
     penetration: 1
   },
   electrode : {
-    damage: 10,
+    damage: 10, // A multiplier avec le niveau
     penetration: 2
   },
   knife : {
     damage: 5,
     penetration: 5
   },
+  stylo : {
+    damage: 2,
+    penetration: 3
+  },
   butt : {
     damage: 7,
     penetration: 1
+  },
+  bite : {
+    damage: 4,
+    penetration: 3
   }
 };
 
@@ -71,6 +87,7 @@ function update() {
     character = characters[characterName];
   }
 
+  var str = 1;
   switch (action) {
     case "aim": // Cas pour savoir si l'on touche l'ennemie
       selWeapDist.style.display = "";
@@ -95,7 +112,6 @@ function update() {
 
     case "damageDist":
       selWeapDist.style.display = "";
-      var str = 1;
       if ( selWeapDist.value == "shotgun" ){
         distanceInput.style.display = "";
         str = 1/distance;
